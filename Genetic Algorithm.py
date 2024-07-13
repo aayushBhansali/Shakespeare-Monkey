@@ -82,7 +82,7 @@ class Population:
                 max = self.population[i].fitness
                 index = i
 
-        print(self.population[index].genes)
+        print(''.join(self.population[index].genes))
 
         for i in range(len(self.population)):
             probability = (self.population[i].fitness / max) * len(self.target)
@@ -117,7 +117,7 @@ class Population:
 
     def display(self):
         for i in range(len(self.population)):
-            print(self.population[i].genes)
+            print(''.join(self.population[i].genes))
 
 
 def procedure():
@@ -133,8 +133,6 @@ def procedure():
         population.naturalSelection()
         check = population.evaluate()
         population.generate()
-        # print("Average Fitness : " + str(population.average_fitness))
-        # print("Generations : " + str(generation))
 
         if check:
             print("Matched ! ")
